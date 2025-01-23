@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Archive Extension",
+  "version": "2.0",
+  "permissions": [
+    "identity",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://www.googleapis.com/*"
+  ],
+  "oauth2": {
+    "client_id": "477739003545-i75qgl70ukjlv8blcl7f80jp5c95mecm.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.readonly", 
+      "https://www.googleapis.com/auth/gmail.modify"
+    ]
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "devtools_page": "devtools.html"
+}

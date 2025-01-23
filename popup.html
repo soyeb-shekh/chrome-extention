@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gmail Archive Extension</title>
+    <style>
+      /* Global reset */
+      body {
+        width: 400px; /* Increase width */
+        height: 600px; /* Increase height */
+        font-family: "Roboto", sans-serif;
+        background-color: #0aa7ce;
+        color: #202124;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden; /* Optional: Prevent overflow of the popup */
+      }
+
+      body,
+      h1,
+      ul,
+      li,
+      button {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 320px;
+        height: 500px;
+        font-family: "Roboto", sans-serif;
+        background: #f4f4f4;
+        color: #202124;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      h1 {
+        font-size: 16px;
+        font-weight: 500;
+        color: #202124;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      /* Style for messages list */
+      #messagesList {
+        list-style-type: none;
+        overflow-y: auto;
+        flex-grow: 1;
+        margin-bottom: 10px;
+      }
+
+      .messageItem {
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        margin-bottom: 8px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        border: 1px solid #e5e5e5;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .messageItem:hover {
+        background-color: #f1f3f4;
+      }
+
+      .messageItem.selected {
+        background-color: #e0e0e0;
+      }
+
+      .messageItem .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .messageItem .header .sender {
+        color: #1a73e8;
+      }
+
+      .messageItem .header .time {
+        color: #5f6368;
+      }
+
+      .messageItem .subject {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+
+      .messageItem .preview {
+        font-size: 14px;
+        color: #5f6368;
+      }
+
+      #archiveButton {
+        width: 100%;
+        padding: 12px;
+        background-color: #1a73e8;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      #archiveButton:hover {
+        background-color: #1558b4;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gmail Archive Extension</h1>
+    <ul id="messagesList">
+      <!-- Example of a message item -->
+      <li class="messageItem">
+        <div class="header">
+          <span class="sender">John Doe</span>
+          <span class="time">12:30 PM</span>
+        </div>
+        <div class="subject">Project Updates</div>
+        <div class="preview">Here are the updates on the project...</div>
+      </li>
+      <!-- More messages will go here -->
+    </ul>
+    <button id="archiveButton">Archive Selected Email</button>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
